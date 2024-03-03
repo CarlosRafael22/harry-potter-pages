@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import { CharacterAttributes } from '@/entities/characters'
+import SimpleInfoTable from '../SimpleInfoTable'
 
 interface Props extends CharacterAttributes {
     id: string
@@ -9,19 +10,22 @@ interface Props extends CharacterAttributes {
 
 const CharacterCard = (props: Props) => {
     const router = useRouter()
+    const { name, gender, house, nationality, image } = props
 
     return (
-      <div className="border-2 border-solid border-red-400 p-4 w-1/5" onClick={() => router.push(`/client-side/characters/${props.id}`)}>
-            {props.image && <Image
-                src={props.image}
+      <div className="border-2 border-solid border-white p-4 w-1/5 cursor-pointer" onClick={() => router.push(`/client-side/characters/${props.id}`)}>
+            {image && <Image
+                src={image}
                 width={200}
                 height={200}
-                alt={props.name || 'Character photo'}
+                alt={name || 'Character photo'}
             />}
-          <p>{`Name: ${props.name}`}</p>
-          <p>{`Gender: ${props.gender}`}</p>
-          <p>{`House: ${props.house}`}</p>
-          <p>{`Nationality: ${props.nationality}`}</p>
+            <SimpleInfoTable>
+                <SimpleInfoTable.Row title='Name' value={name} />
+                <SimpleInfoTable.Row title='Gender' value={gender} />
+                <SimpleInfoTable.Row title='House' value={house} />
+                <SimpleInfoTable.Row title='Nationality' value={nationality} />
+            </SimpleInfoTable>
       </div>
     )
   }
