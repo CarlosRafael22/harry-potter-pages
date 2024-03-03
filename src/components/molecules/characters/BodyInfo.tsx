@@ -15,7 +15,7 @@ const BodyInfo = ({
 
     return (
       <div className="p-2 my-4">
-        <p className="text-lg font-bold mb-2">Body info</p>
+        <p className="subtitle-1 mb-2">Body info</p>
          <SimpleInfoTable>
             <SimpleInfoTable.Row title='Height' value={height} />
             <SimpleInfoTable.Row title='Weight' value={weight} />
