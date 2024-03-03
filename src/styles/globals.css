@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer components {
+  .subtitle-1 {
+    @apply text-lg font-bold;
+  }
+}
