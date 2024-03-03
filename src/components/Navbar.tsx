@@ -5,6 +5,9 @@ const NavBar = () => {
     const pathname = usePathname()
     const renderingTypePathRoot = pathname?.split('/')[1]
 
+    // Remove Navbar to initial '/' page as it's not in any rendering mechanisms page
+    if (!renderingTypePathRoot) return null
+
     return (
       <div className='pr-8'>
           <ul className="flex flex-row justify-end gap-4 p-4">
