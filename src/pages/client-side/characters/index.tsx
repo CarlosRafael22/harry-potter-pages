@@ -15,7 +15,7 @@ const Characters = () => {
 
   return (
     <div>
-      <p>Harry Potter characters:</p>
+      <p className='text-center mb-8 subtitle-1'>Harry Potter characters:</p>
       <div className='flex flex-row flex-wrap gap-4 w-10/12 mx-auto justify-between'>
         {characters?.map((book) => {
             return <CharacterCard {...book.attributes} id={book.id} key={book.id} />
