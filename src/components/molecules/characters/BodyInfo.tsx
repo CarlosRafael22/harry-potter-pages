@@ -10,6 +10,9 @@ const BodyInfo = ({
     skin_color,
     weight
 }: Props) => {
+    const hasAnyPropertyNotNull = [eye_color, hair_color, height, skin_color, weight].some(info => info)
+    if (!hasAnyPropertyNotNull) return null
+
     return (
       <div className="p-2 my-4">
         <p className="text-lg font-bold mb-2">Body info</p>
