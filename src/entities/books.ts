@@ -26,10 +26,3 @@ export interface BookData {
     }
     type: 'book'
 }
-
-
-export interface ResponseData {
-    data: BookData[]
-    links: Record<string, unknown>
-    meta: Record<string, unknown>
-  }
