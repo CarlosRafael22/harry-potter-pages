@@ -23,11 +23,10 @@ const Characters = () => {
     }, [isReady, query.id])
 
   return (
-    <div>
-      <p>Harry Potter character:</p>
+    <div className='my-8'>
       {
         loading ? <p>Loading....</p> : (
-            <div className='flex flex-row flex-wrap gap-4 w-10/12 mx-auto justify-between'>
+            <div className='flex flex-row flex-wrap gap-4 w-6/12 mx-auto justify-between'>
                 <Character {...character!.attributes} />
             </div>
         )
