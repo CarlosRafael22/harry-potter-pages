@@ -9,6 +9,12 @@ const nextConfig = {
         port: '',
         pathname: '/harrypotter/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.wizardingworld.com',
+        port: '',
+        pathname: '/images/products/books/UK/**',
+      }
     ],
   },
 };
