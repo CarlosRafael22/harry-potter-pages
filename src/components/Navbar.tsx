@@ -6,15 +6,15 @@ const NavBar = () => {
     const renderingTypePathRoot = pathname?.split('/')[1]
 
     return (
-      <div>
-          <ul className="flex flex-row justify-end gap-4 border-2 border-solid border-red-400 p-4">
-            <li>
+      <div className='pr-8'>
+          <ul className="flex flex-row justify-end gap-4 p-4">
+            <li className="subtitle-1">
                 <Link href={`/${renderingTypePathRoot}`}>Homepage</Link>
             </li>
-            <li>
+            <li className="subtitle-1">
                 <Link href={`/${renderingTypePathRoot}/books`}>Books</Link>
             </li>
-            <li>
+            <li className="subtitle-1">
                 <Link href={`/${renderingTypePathRoot}/characters`}>Characters</Link>
             </li>
         </ul>
