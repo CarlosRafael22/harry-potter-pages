@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import useRenderingTypePath from '@/hooks/useRenderingTypePath'
 
 const NavBar = () => {
-    const pathname = usePathname()
-    const renderingTypePathRoot = pathname?.split('/')[1]
+   const renderingTypePathRoot = useRenderingTypePath()
 
     // Remove Navbar to initial '/' page as it's not in any rendering mechanisms page
     if (!renderingTypePathRoot) return null
