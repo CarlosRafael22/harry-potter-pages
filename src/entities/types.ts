@@ -29,10 +29,10 @@ export interface ResponseData<T = Record<string, unknown>> {
     type: string
 }
 
-export interface Response {
-    data: ResponseData[]
-    links: Links
-    meta: Meta
+export interface Response<T = Record<string, unknown>> {
+    data: T extends Array<infer U> ? ResponseData<U>[] : ResponseData<T>;
+    links: Links;
+    meta: Meta;
 }
 
 export type NullableType<T> = T | null
